@@ -1,0 +1,13 @@
+<app-featured-carousel [properties]="featured()" />
+
+<section class="container my-4">
+  <h2 class="mb-3">All Listings</h2>
+
+  <div class="row g-4">
+    @for (property of properties(); track property.id) {
+      <div class="col-12 col-md-6 col-lg-4">
+        <app-property-card [property]="property" />
+      </div>
+    }
+  </div>
+</section>

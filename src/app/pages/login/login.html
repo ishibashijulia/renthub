@@ -1,0 +1,51 @@
+<div class="container my-5" style="max-width: 420px">
+  <h2 class="mb-4">Login</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label class="form-label" for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [class.is-invalid]="email.invalid && email.touched"
+      />
+      @if (email.touched && email.errors) {
+        <div class="invalid-feedback d-block">
+          @if (email.errors['required']) {
+            Email is required.
+          } @else if (email.errors['email']) {
+            Please enter a valid email address.
+          }
+        </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [class.is-invalid]="password.invalid && password.touched"
+      />
+      @if (password.touched && password.errors) {
+        <div class="invalid-feedback d-block">
+          @if (password.errors['required']) {
+            Password is required.
+          } @else if (password.errors['minlength']) {
+            Password must be at least 6 characters.
+          }
+        </div>
+      }
+    </div>
+
+    @if (errorMessage()) {
+      <div class="alert alert-danger">{{ errorMessage() }}</div>
+    }
+
+    <button class="btn btn-primary w-100" type="submit" [disabled]="form.invalid">Login</button>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+@if (current(); as p) {
+  <section class="featured container my-4">
+    <h2 class="mb-3">Featured listings</h2>
+
+    <div class="d-flex gap-3 align-items-stretch">
+      <div class="photo-wrapper">
+        <img class="featured-photo" [src]="p.photos[0]" [alt]="p.title" />
+
+        <button class="arrow arrow-left" type="button" (click)="prev()" aria-label="Previous">
+          ‹
+        </button>
+        <button class="arrow arrow-right" type="button" (click)="next()" aria-label="Next">
+          ›
+        </button>
+      </div>
+
+      <div class="featured-info border rounded p-4 d-flex flex-column">
+        <h3>{{ p.title }}</h3>
+        <p class="text-muted">{{ p.location }} / ¥{{ p.price }}</p>
+        <p>{{ p.description }}</p>
+
+        <div class="mt-auto d-flex gap-2">
+          <a class="btn btn-primary" [routerLink]="['/property', p.id]">View details</a>
+          <button class="btn btn-outline-danger" type="button">Mark as Favorite</button>
+        </div>
+      </div>
+    </div>
+  </section>
+}

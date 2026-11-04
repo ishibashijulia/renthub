@@ -1,0 +1,150 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "title": "Sunny 2BHK near station",
+      "description": "Bright apartment, 5 minutes walk from the station.",
+      "location": "Tokyo",
+      "price": 120000,
+      "furnished": true,
+      "amenities": ["WiFi", "Parking"],
+      "vegetarianOnly": "any",
+      "photos": ["https://picsum.photos/seed/renthub1/800/500"],
+      "contactName": "Taro",
+      "contactPhone": "090-0000-0001",
+      "featured": true,
+      "createdAt": "2026-11-02T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "ownerId": 1,
+      "title": "Cozy studio in Shibuya",
+      "description": "Compact studio, perfect for a single person.",
+      "location": "Tokyo",
+      "price": 85000,
+      "furnished": true,
+      "amenities": ["WiFi", "Air Conditioning"],
+      "vegetarianOnly": "no",
+      "photos": ["https://picsum.photos/seed/renthub2/800/500"],
+      "contactName": "Taro",
+      "contactPhone": "090-0000-0001",
+      "featured": false,
+      "createdAt": "2026-10-28T09:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "ownerId": 2,
+      "title": "Spacious 3LDK family home",
+      "description": "Large living room and a small balcony garden.",
+      "location": "Osaka",
+      "price": 180000,
+      "furnished": false,
+      "amenities": ["Parking", "Balcony", "Laundry"],
+      "vegetarianOnly": "any",
+      "photos": ["https://picsum.photos/seed/renthub3/800/500"],
+      "contactName": "Hanako",
+      "contactPhone": "090-0000-0002",
+      "featured": true,
+      "createdAt": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "ownerId": 2,
+      "title": "Quiet 1K by the river",
+      "description": "Peaceful area with a park nearby.",
+      "location": "Kyoto",
+      "price": 62000,
+      "furnished": false,
+      "amenities": ["WiFi"],
+      "vegetarianOnly": "yes",
+      "photos": ["https://picsum.photos/seed/renthub4/800/500"],
+      "contactName": "Hanako",
+      "contactPhone": "090-0000-0002",
+      "featured": false,
+      "createdAt": "2026-10-20T08:30:00.000Z"
+    },
+    {
+      "id": 5,
+      "ownerId": 3,
+      "title": "Modern loft with city view",
+      "description": "High floor, floor-to-ceiling windows.",
+      "location": "Yokohama",
+      "price": 140000,
+      "furnished": true,
+      "amenities": ["WiFi", "Gym", "Air Conditioning"],
+      "vegetarianOnly": "any",
+      "photos": ["https://picsum.photos/seed/renthub5/800/500"],
+      "contactName": "Ken",
+      "contactPhone": "090-0000-0003",
+      "featured": true,
+      "createdAt": "2026-11-01T15:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "ownerId": 3,
+      "title": "Budget room for students",
+      "description": "Affordable and close to the university.",
+      "location": "Nagoya",
+      "price": 48000,
+      "furnished": true,
+      "amenities": ["WiFi", "Laundry"],
+      "vegetarianOnly": "no",
+      "photos": ["https://picsum.photos/seed/renthub6/800/500"],
+      "contactName": "Ken",
+      "contactPhone": "090-0000-0003",
+      "featured": false,
+      "createdAt": "2026-10-15T11:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Taro",
+      "email": "taro@example.com",
+      "password": "password123",
+      "role": "landlord"
+    },
+    {
+      "id": 2,
+      "name": "Hanako",
+      "email": "hanako@example.com",
+      "password": "password123",
+      "role": "landlord"
+    },
+    {
+      "id": 3,
+      "name": "Mika",
+      "email": "mika@example.com",
+      "password": "password123",
+      "role": "renter"
+    },
+    {
+      "name": "Julia",
+      "email": "julia.ishbashi@nagarro.com",
+      "password": "Julia123",
+      "role": "renter",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "propertyId": 1,
+      "userId": 3,
+      "userName": "Mika",
+      "text": "Is the apartment still available from December?",
+      "parentId": null,
+      "createdAt": "2026-11-03T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "propertyId": 1,
+      "userId": 1,
+      "userName": "Taro",
+      "text": "Yes, it is. You are welcome to visit this weekend.",
+      "parentId": 1,
+      "createdAt": "2026-11-03T12:30:00.000Z"
+    }
+  ]
+}

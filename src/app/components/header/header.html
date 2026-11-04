@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand bg-white border-bottom px-4">
+  <a class="navbar-brand fw-bold" routerLink="/">RentHub</a>
+
+  <div class="ms-auto d-flex align-items-center gap-3">
+    @if (auth.isLoggedIn()) {
+      <a class="nav-link" routerLink="/profile">Profile</a>
+      <span class="text-muted">{{ auth.currentUser()?.name }}</span>
+      <button class="btn btn-outline-secondary btn-sm" type="button" (click)="logout()">
+        Logout
+      </button>
+      @if (auth.currentUser()?.role === 'landlord') {
+        <a class="nav-link" routerLink="/create">Post a listing</a>
+      }
+    } @else {
+      <a class="nav-link" routerLink="/login">Login</a>
+      <a class="nav-link" routerLink="/register">Register</a>
+    }
+  </div>
+</nav>

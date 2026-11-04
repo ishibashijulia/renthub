@@ -1,0 +1,4 @@
+.card-photo {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
