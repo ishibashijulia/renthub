@@ -2,13 +2,14 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, tap } from 'rxjs';
 import { User } from '../models/users';
+import { environment } from '../../environments/environment';
 
 export type SessionUser = Omit<User, 'password'>;
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private http = inject(HttpClient);
-  private usersUrl = 'http://localhost:3000/users';
+  private usersUrl = `${environment.apiUrl}/users`;
 
   currentUser = signal<SessionUser | null>(this.loadUser());
   isLoggedIn = computed(() => this.currentUser() !== null);
