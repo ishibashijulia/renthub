@@ -21,7 +21,15 @@
 
         <div class="mt-auto d-flex gap-2">
           <a class="btn btn-primary" [routerLink]="['/property', p.id]">View details</a>
-          <button class="btn btn-outline-danger" type="button">Mark as Favorite</button>
+          <button
+            class="btn btn-sm"
+            [class.btn-danger]="favoriteService.isFavorite(p.id)"
+            [class.btn-outline-danger]="!favoriteService.isFavorite(p.id)"
+            type="button"
+            (click)="onFavorite()"
+          >
+            {{ favoriteService.isFavorite(p.id) ? 'Favorited ♥' : 'Mark as Favorite' }}
+          </button>
         </div>
       </div>
     </div>

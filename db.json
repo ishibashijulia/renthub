@@ -3,14 +3,27 @@
     {
       "id": 1,
       "ownerId": 1,
+      "propertyType": "apartment",
+      "buildingName": "Sunrise Heights",
+      "shared": false,
       "title": "Sunny 2BHK near station",
       "description": "Bright apartment, 5 minutes walk from the station.",
       "location": "Tokyo",
+      "address": "1-2-3 Shibuya",
+      "squareFeet": 750,
+      "leaseType": "long",
       "price": 120000,
+      "negotiable": true,
+      "priceMode": "per-month",
       "furnished": true,
-      "amenities": ["WiFi", "Parking"],
+      "amenities": [
+        "Gym / Fitness Center",
+        "Car Park"
+      ],
       "vegetarianOnly": "any",
-      "photos": ["https://picsum.photos/seed/renthub1/800/500"],
+      "photos": [
+        "https://picsum.photos/seed/renthub1/800/500"
+      ],
       "contactName": "Taro",
       "contactPhone": "090-0000-0001",
       "featured": true,
@@ -18,83 +31,220 @@
     },
     {
       "id": 2,
-      "ownerId": 1,
-      "title": "Cozy studio in Shibuya",
-      "description": "Compact studio, perfect for a single person.",
-      "location": "Tokyo",
-      "price": 85000,
+      "ownerId": 2,
+      "propertyType": "studio",
+      "buildingName": "Central Studio Tower",
+      "shared": false,
+      "title": "Compact Studio in City Center",
+      "description": "Convenient studio apartment close to shops and transport.",
+      "location": "Osaka",
+      "address": "2-5-8 Namba",
+      "squareFeet": 320,
+      "leaseType": "both",
+      "price": 75000,
+      "negotiable": false,
+      "priceMode": "utilities-included",
       "furnished": true,
-      "amenities": ["WiFi", "Air Conditioning"],
-      "vegetarianOnly": "no",
-      "photos": ["https://picsum.photos/seed/renthub2/800/500"],
-      "contactName": "Taro",
-      "contactPhone": "090-0000-0001",
+      "amenities": [
+        "WiFi",
+        "Air Conditioning"
+      ],
+      "vegetarianOnly": "any",
+      "photos": [
+        "https://picsum.photos/seed/renthub2/800/500"
+      ],
+      "contactName": "Hanako",
+      "contactPhone": "090-0000-0002",
       "featured": false,
-      "createdAt": "2026-10-28T09:00:00.000Z"
+      "createdAt": "2026-11-02T11:00:00.000Z"
     },
     {
       "id": 3,
-      "ownerId": 2,
-      "title": "Spacious 3LDK family home",
-      "description": "Large living room and a small balcony garden.",
-      "location": "Osaka",
-      "price": 180000,
-      "furnished": false,
-      "amenities": ["Parking", "Balcony", "Laundry"],
-      "vegetarianOnly": "any",
-      "photos": ["https://picsum.photos/seed/renthub3/800/500"],
-      "contactName": "Hanako",
-      "contactPhone": "090-0000-0002",
-      "featured": true,
-      "createdAt": "2026-10-30T12:00:00.000Z"
-    },
-    {
-      "id": 4,
-      "ownerId": 2,
-      "title": "Quiet 1K by the river",
-      "description": "Peaceful area with a park nearby.",
-      "location": "Kyoto",
-      "price": 62000,
-      "furnished": false,
-      "amenities": ["WiFi"],
-      "vegetarianOnly": "yes",
-      "photos": ["https://picsum.photos/seed/renthub4/800/500"],
-      "contactName": "Hanako",
-      "contactPhone": "090-0000-0002",
-      "featured": false,
-      "createdAt": "2026-10-20T08:30:00.000Z"
-    },
-    {
-      "id": 5,
-      "ownerId": 3,
-      "title": "Modern loft with city view",
-      "description": "High floor, floor-to-ceiling windows.",
+      "ownerId": 1,
+      "propertyType": "house",
+      "buildingName": "Green Garden House",
+      "shared": false,
+      "title": "Spacious Family House",
+      "description": "Large house with garden and parking space.",
       "location": "Yokohama",
-      "price": 140000,
-      "furnished": true,
-      "amenities": ["WiFi", "Gym", "Air Conditioning"],
+      "address": "3-10-15 Minato Mirai",
+      "squareFeet": 1400,
+      "leaseType": "long",
+      "price": 250000,
+      "negotiable": true,
+      "priceMode": "per-month",
+      "furnished": false,
+      "amenities": [
+        "Car Park",
+        "Garden",
+        "Storage"
+      ],
       "vegetarianOnly": "any",
-      "photos": ["https://picsum.photos/seed/renthub5/800/500"],
+      "photos": [
+        "https://picsum.photos/seed/renthub3/800/500"
+      ],
       "contactName": "Ken",
       "contactPhone": "090-0000-0003",
       "featured": true,
-      "createdAt": "2026-11-01T15:00:00.000Z"
+      "createdAt": "2026-11-02T12:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "ownerId": 3,
+      "propertyType": "apartment",
+      "buildingName": "Harmony Shared Residence",
+      "shared": true,
+      "title": "Affordable Shared Apartment",
+      "description": "Shared accommodation for students and professionals.",
+      "location": "Kyoto",
+      "address": "4-7-12 Gion",
+      "squareFeet": 280,
+      "leaseType": "short",
+      "price": 45000,
+      "negotiable": false,
+      "priceMode": "utilities-included",
+      "furnished": true,
+      "amenities": [
+        "WiFi",
+        "Laundry Room"
+      ],
+      "vegetarianOnly": "any",
+      "photos": [
+        "https://picsum.photos/seed/renthub4/800/500"
+      ],
+      "contactName": "Yuki",
+      "contactPhone": "090-0000-0004",
+      "featured": false,
+      "createdAt": "2026-11-02T13:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "ownerId": 2,
+      "propertyType": "apartment",
+      "buildingName": "Riverside Court",
+      "shared": false,
+      "title": "Modern Apartment with River View",
+      "description": "Comfortable apartment with balcony and great view.",
+      "location": "Nagoya",
+      "address": "5-4-20 Sakae",
+      "squareFeet": 900,
+      "leaseType": "long",
+      "price": 150000,
+      "negotiable": false,
+      "priceMode": "per-month",
+      "furnished": true,
+      "amenities": [
+        "Gym / Fitness Center",
+        "Elevator"
+      ],
+      "vegetarianOnly": "any",
+      "photos": [
+        "https://picsum.photos/seed/renthub5/800/500"
+      ],
+      "contactName": "Mika",
+      "contactPhone": "090-0000-0005",
+      "featured": true,
+      "createdAt": "2026-11-02T14:00:00.000Z"
     },
     {
       "id": 6,
       "ownerId": 3,
-      "title": "Budget room for students",
-      "description": "Affordable and close to the university.",
-      "location": "Nagoya",
-      "price": 48000,
+      "propertyType": "studio",
+      "buildingName": "Smart Living Hub",
+      "shared": true,
+      "title": "Budget Shared Studio",
+      "description": "Small shared studio with all basic amenities included.",
+      "location": "Fukuoka",
+      "address": "6-8-3 Hakata",
+      "squareFeet": 200,
+      "leaseType": "both",
+      "price": 40000,
+      "negotiable": true,
+      "priceMode": "utilities-included",
       "furnished": true,
-      "amenities": ["WiFi", "Laundry"],
-      "vegetarianOnly": "no",
-      "photos": ["https://picsum.photos/seed/renthub6/800/500"],
-      "contactName": "Ken",
-      "contactPhone": "090-0000-0003",
+      "amenities": [
+        "WiFi",
+        "Shared Kitchen"
+      ],
+      "vegetarianOnly": "any",
+      "photos": [
+        "https://picsum.photos/seed/renthub6/800/500"
+      ],
+      "contactName": "Satoshi",
+      "contactPhone": "090-0000-0006",
       "featured": false,
-      "createdAt": "2026-10-15T11:00:00.000Z"
+      "createdAt": "2026-11-02T15:00:00.000Z"
+    },
+    {
+      "ownerId": 1,
+      "title": "Shelbourne House",
+      "description": " Test houseTest houseTest houseTest houseTest houseTest house",
+      "location": "Shelbourne",
+      "price": 100000,
+      "furnished": true,
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Balcony",
+        "Laundry"
+      ],
+      "vegetarianOnly": "any",
+      "photos": [
+        "https://localhost:3000"
+      ],
+      "contactName": "Julia",
+      "contactPhone": "8989192843947",
+      "featured": false,
+      "createdAt": "2026-11-05T04:41:53.146Z",
+      "id": 7
+    },
+    {
+      "ownerId": 1,
+      "title": "Shelbourne house",
+      "description": "House in Shelbourne House in Shelbourne House in Shelbourne House in Shelbourne ",
+      "location": "Shelbourne",
+      "price": 100000,
+      "furnished": true,
+      "amenities": [
+        "WiFi",
+        "Parking",
+        "Balcony"
+      ],
+      "vegetarianOnly": "any",
+      "photos": [
+        "https://localhost:3000"
+      ],
+      "contactName": "Julia",
+      "contactPhone": "8989192843947",
+      "featured": false,
+      "createdAt": "2026-11-05T04:43:22.355Z",
+      "id": 8
+    },
+    {
+      "ownerId": 1,
+      "propertyType": "apartment",
+      "buildingName": "longdon arbar",
+      "shared": false,
+      "location": "Shelbourne",
+      "address": "234",
+      "squareFeet": 11,
+      "leaseType": "both",
+      "price": 40000,
+      "negotiable": false,
+      "priceMode": "per-month",
+      "furnished": false,
+      "amenities": [],
+      "title": "beach house",
+      "description": "Test Test Test Test Test Test Test Test ",
+      "photos": [
+        "data:image/jpeg;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z"
+      ],
+      "vegetarianOnly": "any",
+      "contactName": "Julia",
+      "contactPhone": "8989192843947",
+      "featured": false,
+      "createdAt": "2026-11-05T05:15:32.528Z",
+      "id": 9
     }
   ],
   "users": [
@@ -145,6 +295,61 @@
       "text": "Yes, it is. You are welcome to visit this weekend.",
       "parentId": 1,
       "createdAt": "2026-11-03T12:30:00.000Z"
+    },
+    {
+      "propertyId": 1,
+      "userId": 4,
+      "userName": "Julia",
+      "text": "Test",
+      "parentId": null,
+      "createdAt": "2026-11-05T02:03:40.580Z",
+      "id": 3
+    },
+    {
+      "propertyId": 1,
+      "userId": 4,
+      "userName": "Julia",
+      "text": "Hi",
+      "createdAt": "2026-11-05T02:55:30.218Z",
+      "id": 4
+    },
+    {
+      "propertyId": 1,
+      "userId": 4,
+      "userName": "Julia",
+      "text": "test",
+      "createdAt": "2026-11-05T02:55:41.363Z",
+      "id": 5
+    },
+    {
+      "propertyId": 1,
+      "userId": 4,
+      "userName": "Julia",
+      "text": "yes",
+      "parentId": 1,
+      "createdAt": "2026-11-05T02:56:34.149Z",
+      "id": 6
+    },
+    {
+      "propertyId": 1,
+      "userId": 4,
+      "userName": "Julia",
+      "text": "test",
+      "parentId": 3,
+      "createdAt": "2026-11-05T02:56:39.774Z",
+      "id": 7
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 3,
+      "propertyId": 1
+    },
+    {
+      "userId": 4,
+      "propertyId": 1,
+      "id": 2
     }
   ]
 }

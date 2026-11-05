@@ -9,7 +9,46 @@
           thread.parent.createdAt | date: 'yyyy/MM/dd HH:mm'
         }}</small>
         <p class="mb-0">{{ thread.parent.text }}</p>
+
+        @if (auth.isLoggedIn()) {
+          <button
+            class="btn btn-link btn-sm px-0"
+            type="button"
+            (click)="startReply(thread.parent.id)"
+          >
+            Reply
+          </button>
+        }
       </div>
+
+      @if (replyingTo() === thread.parent.id) {
+        <div class="ms-5 mt-2">
+          <textarea
+            class="form-control"
+            rows="2"
+            placeholder="Write a reply..."
+            [formControl]="replyText"
+            [class.is-invalid]="replyText.invalid && replyText.touched"
+          ></textarea>
+          @if (replyText.touched && replyText.errors) {
+            <div class="invalid-feedback d-block">
+              @if (replyText.errors['required']) {
+                Reply cannot be empty.
+              } @else if (replyText.errors['minlength']) {
+                Reply must be at least 2 characters.
+              }
+            </div>
+          }
+          <div class="mt-2 d-flex gap-2">
+            <button class="btn btn-primary btn-sm" type="button" (click)="postReply()">
+              Send reply
+            </button>
+            <button class="btn btn-outline-secondary btn-sm" type="button" (click)="cancelReply()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      }
 
       @for (reply of thread.replies; track reply.id) {
         <div class="border rounded p-3 ms-5 mt-2 bg-light">

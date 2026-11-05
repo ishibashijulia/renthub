@@ -40,6 +40,45 @@ export class Comments {
     validators: [Validators.required, Validators.minLength(2)],
   });
 
+  replyingTo = signal<number | null>(null);
+
+  replyText = new FormControl('', {
+    nonNullable: true,
+    validators: [Validators.required, Validators.minLength(2)],
+  });
+
+  startReply(commentId: number) {
+    this.replyText.reset();
+    this.replyingTo.set(commentId);
+  }
+
+  cancelReply() {
+    this.replyingTo.set(null);
+  }
+
+  postReply() {
+    const user = this.auth.currentUser();
+    const parentId = this.replyingTo();
+    if (this.replyText.invalid || !user || parentId === null) {
+      this.replyText.markAsTouched();
+      return;
+    }
+
+    this.commentService
+      .addComment({
+        propertyId: this.propertyId(),
+        userId: user.id,
+        userName: user.name,
+        text: this.replyText.value,
+        parentId,
+        createdAt: new Date().toISOString(),
+      })
+      .subscribe((created) => {
+        this.comments.update((list) => [...list, created]);
+        this.replyingTo.set(null);
+      });
+  }
+
   ngOnInit() {
     this.commentService.getComments(this.propertyId()).subscribe((data) => {
       this.comments.set(data);
@@ -52,7 +91,6 @@ export class Comments {
       this.text.markAsTouched();
       return;
     }
-
     this.commentService
       .addComment({
         propertyId: this.propertyId(),
