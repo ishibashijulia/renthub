@@ -1,1 +1,49 @@
-<p>comments works!</p>
+<section class="mt-5">
+  <h4 class="mb-3">Comments ({{ comments().length }})</h4>
+
+  @for (thread of threads(); track thread.parent.id) {
+    <div class="mb-3">
+      <div class="border rounded p-3">
+        <strong>{{ thread.parent.userName }}</strong>
+        <small class="text-muted ms-2">{{
+          thread.parent.createdAt | date: 'yyyy/MM/dd HH:mm'
+        }}</small>
+        <p class="mb-0">{{ thread.parent.text }}</p>
+      </div>
+
+      @for (reply of thread.replies; track reply.id) {
+        <div class="border rounded p-3 ms-5 mt-2 bg-light">
+          <strong>{{ reply.userName }}</strong>
+          <small class="text-muted ms-2">{{ reply.createdAt | date: 'yyyy/MM/dd HH:mm' }}</small>
+          <p class="mb-0">{{ reply.text }}</p>
+        </div>
+      }
+    </div>
+  } @empty {
+    <p class="text-muted">No comments yet.</p>
+  }
+
+  @if (auth.isLoggedIn()) {
+    <div class="mt-4">
+      <textarea
+        class="form-control"
+        rows="3"
+        placeholder="Write a comment..."
+        [formControl]="text"
+        [class.is-invalid]="text.invalid && text.touched"
+      ></textarea>
+      @if (text.touched && text.errors) {
+        <div class="invalid-feedback d-block">
+          @if (text.errors['required']) {
+            Comment cannot be empty.
+          } @else if (text.errors['minlength']) {
+            Comment must be at least 2 characters.
+          }
+        </div>
+      }
+      <button class="btn btn-primary mt-2" type="button" (click)="post()">Post comment</button>
+    </div>
+  } @else {
+    <p class="mt-4"><a routerLink="/login">Log in</a> to leave a comment.</p>
+  }
+</section>

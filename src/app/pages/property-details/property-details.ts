@@ -2,10 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PropertyService } from '../../services/property.service';
 import { Property } from '../../models/property';
+import { Comments } from '../../components/comments/comments';
 
 @Component({
   selector: 'app-property-details',
-  imports: [RouterLink],
+  imports: [RouterLink, Comments],
   templateUrl: './property-details.html',
   styleUrl: './property-details.css',
 })

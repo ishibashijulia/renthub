@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth';
 import { CommentService } from '../../services/comment';
 import { PropertyComment } from '../../models/comment';
+import { DatePipe } from '@angular/common';
 
 interface Thread {
   parent: PropertyComment;
@@ -12,7 +13,7 @@ interface Thread {
 
 @Component({
   selector: 'app-comments',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, DatePipe],
   templateUrl: './comments.html',
   styleUrl: './comments.css',
 })
