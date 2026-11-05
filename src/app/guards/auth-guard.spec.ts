@@ -1,16 +1,27 @@
 import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import { UrlTree, provideRouter } from '@angular/router';
+import { signal } from '@angular/core';
 import { authGuard } from './auth-guard';
+import { AuthService } from '../services/auth';
 
 describe('authGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) =>
-    TestBed.runInInjectionContext(() => authGuard(...guardParameters));
+  const run = (loggedIn: boolean) => {
+    TestBed.configureTestingModule({
+      providers: [
+        provideRouter([]),
+        { provide: AuthService, useValue: { isLoggedIn: signal(loggedIn) } },
+      ],
+    });
+    return TestBed.runInInjectionContext(() => authGuard({} as any, { url: '/profile' } as any));
+  };
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
+  it('allows access when logged in', () => {
+    expect(run(true)).toBe(true);
   });
 
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
+  it('redirects to /login when logged out', () => {
+    const result = run(false);
+    expect(result instanceof UrlTree).toBe(true);
+    expect((result as UrlTree).toString()).toContain('/login');
   });
 });
